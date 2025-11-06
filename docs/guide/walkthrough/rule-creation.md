@@ -133,9 +133,9 @@ defineRule('min', {
 
 :::
 
-## 🔄 Asynchronous Rules
+## 🔄 Asynchronous
 
-Return a simple `boolean` result and use the rule’s **default message** or chain multiple conditions with **nested messages** to have a more **dynamic messaging**. Learn more information on how a **message is resolved** with the [Messaging](./messaging.md) guide.
+Return a simple `boolean` result and use the rule’s **default message** or chain multiple conditions with **nested messages** to have a more **dynamic messaging**.
 
 ::: tabs
 == single message
@@ -176,9 +176,11 @@ defineRule('username', {
 
 :::
 
-## ↔️ Cross-Field Rules
+> 💡 Learn more about **message resolving** with the [Messaging](./messaging.md) guide.
 
-Using the `checksTarget` flag, you can have access to the `FormData` inside the `context` object. This allows you to easily access the target field’s value for your logic.
+## ↔️ Cross-Field
+
+Using the `checksTarget` flag, the `validate()` function will have access to the `FormData` within the `context` object. This allows for easy access to the target field’s value.
 
 ```js
 defineRule('match', {
@@ -199,7 +201,7 @@ defineRule('match', {
 
 > 💡 Combine **cross-field** logic with **async rules** for complex validation scenarios.
 
-## ✅ Required-Type Rules
+## ✅ Required-Type
 
 With the `checksRequired` flag, the system registers the rule in a different `registry` that runs an additional `isFieldRequired()` check, dedicated to **required-type** rules. Learn more information about the **validation flow** with the [validateForm()](../../core/validate-form.md) API.
 
@@ -220,3 +222,5 @@ defineRule('required-with', {
   <input type="text" name="bar" />
 </form>
 ```
+
+> 💡 Learn more about **validation flow** with the [validateForm()](../../core/validate-form.md) API.

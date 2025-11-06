@@ -60,6 +60,7 @@ defineRules({
 | `format`         | `Array \| Function` | `[]`    | Optional interpolation strategy for advanced message formatting.                                                   |
 | `checksRequired` | `boolean`           | `false` | Marks the rule as a _requirement_ check. Used to determine if a field must be filled.                              |
 | `checksTarget`   | `boolean`           | `false` | Enables access to `form` data, useful for cross-field validation.                                                  |
+| `collectAttrs`   | `Array`             | `[]`    | Enables access to other field attributes for a more complex logic.                                                 |
 
 > ⚠️ Throws a `warning` if the definition is missing a valid `name` or `validate()` function.
 

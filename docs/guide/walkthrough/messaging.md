@@ -19,7 +19,7 @@ defineRule('minlength', {
 })
 ```
 
-Another common way is using an **explicit message**. You can return a **single message** or chain multiple conditions with **nested messages** for a more **dynamic messaging**.
+Another common way is through an **explicit message**. Return a **single message** or chain multiple conditions with **nested messages** for a more **dynamic messaging**.
 
 ::: tabs
 == single message

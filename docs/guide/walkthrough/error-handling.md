@@ -8,7 +8,7 @@ Manage **validation feedback** through multiple layers — from **inline message
 
 ## 💬 Inline Errors
 
-When a field fails, the inline errors are handled internally. It does not care about the `dirty` and `touched` state, it will always be toggled when a field is validated. To suppress this, you can add the `__sfInline` flag to you form.
+When a form field fails validation, an **error block** is created. These error blocks are handled internally and are **cached effeciently** for a faster render times. Both the field and the **error block** comes with **full ARIA support** for a better accesibility and reading.
 
 ### Supressing Inline
 
@@ -76,7 +76,7 @@ validity.onReset(() => {
 
 :::
 
-> 💡 Learn more about handling error popups with the [`withPopup()`](../../tools/with-popup.md) API.
+> 💡 Learn more about managing popup with the [`withPopup()`](../../tools/with-popup.md) API.
 
 ## 🧾 Summary List
 
@@ -122,11 +122,11 @@ validity.onReset(() => {
 
 :::
 
-> 💡 Learn more about handling error popups with the [`withSummary()`](../../tools/with-summary.md) API.
+> 💡 Learn more about managing summary with the [`withSummary()`](../../tools/with-summary.md) API.
 
 ## ⚠️ Error States
 
-The `handleErrors()` tool is not just for displaying and managing the feedbacks. It also provides a full control to track errors statefully. Under the hood, it uses the `useValidity()` to observe all the form and field-level validation events.
+The `handleErrors()` tool is not just for **displaying feedbacks**. It also provides a full control to **track errors statefully**. Under the hood, it uses the `useValidity()` to observe the form.
 
 ```js
 const form = document.querySelector('#login')
