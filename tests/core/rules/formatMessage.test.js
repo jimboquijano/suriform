@@ -20,7 +20,7 @@ describe('formatMessage()', () => {
 
     defineRule('between', between)
     rule = ruleRegistry.between
-    context = getContext(field, 'between')
+    context = getContext(field, rule)
   })
 
   afterEach(() => {

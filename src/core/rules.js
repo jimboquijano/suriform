@@ -7,10 +7,10 @@
  * integrates seamlessly with message utilities for uniform feedback.
  */
 
-import { splitParams } from '../helpers/format'
-import { getFormData, getFieldValue } from '../helpers/dom'
+import { getFormData, getFieldValue, getAttrValues } from '../helpers/dom'
 import { formatPositional, formatKeyValue } from './i18n'
 import { getName, getMessage } from './i18n'
+import { splitParams } from '../helpers/format'
 
 export const ruleRegistry = {}
 export const reqRegistry = {}
@@ -86,22 +86,17 @@ export function defineRules(rulesObj) {
  * @returns {Promise<string|undefined>} Error message if invalid; otherwise undefined.
  */
 export async function validateRule(rule, field) {
-  let { name, attr, validate, checksRequired = false } = rule
+  let { name, validate, checksRequired = false } = rule
 
   try {
     // Build validation context information
-    const context = getContext(field, attr)
+    const context = getContext(field, rule)
     const { value, attrValue, params, type } = context
     const cacheKey = `${name}:${value}:${attrValue}`
 
     // Checks and returns cache if NOT target and file types
     if (type !== 'file' && !rule.checksTarget && resultCache.has(cacheKey)) {
       return resultCache.get(cacheKey)
-    }
-
-    // Retrieve form and field values
-    if (rule.checksTarget && field.form) {
-      context.form = getFormData(field.form)
     }
 
     // Execute the rule's validation function
@@ -148,20 +143,36 @@ export async function validateRule(rule, field) {
  * 2. Return a context object including field name, type, value and params.
  *
  * @param {HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement} field - Field to build context for.
- * @param {Object} attr - Validation rule attribute.
+ * @param {Object} rule - Validation rule containing options for retrieving context.
  * @returns {Object} Context object for validation.
  */
-export function getContext(field, attr) {
+export function getContext(field, rule) {
+  const { attr, checksTarget, collectAttrs } = rule
+  let form = {}
+  let attrs = {}
+
   const value = getFieldValue(field)
   const attrValue = field.getAttribute(attr)
   const params = splitParams(attrValue)
+
+  // Retrieve form and field values
+  if (checksTarget && field.form) {
+    form = getFormData(field.form)
+  }
+
+  // Retrieve extra attributes
+  if (collectAttrs) {
+    attrs = getAttrValues(field, collectAttrs)
+  }
 
   return {
     field: field.name,
     type: field.type,
     value,
     attrValue,
-    params
+    params,
+    form,
+    attrs
   }
 }
 

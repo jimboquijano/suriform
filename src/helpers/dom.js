@@ -170,3 +170,30 @@ export function getFormData(form) {
 
   return data
 }
+
+/**
+ * Collect specific attributes from an element into an object.
+ *
+ * 1. Accepts an array of attribute names.
+ * 2. Returns an object containing only existing attributes.
+ * 3. Skips attributes that are not present on the element.
+ *
+ * @param {HTMLElement} el - Element to collect attributes from.
+ * @param {string[]} attrs - List of attribute names to extract.
+ * @returns {Object} Key-value pairs of existing attributes.
+ *
+ * @example
+ * // <input foo="5" bar="10" />
+ * getAttrValues(input, ['foo', 'bar']) // { foo: "5", bar: "10" }
+ */
+export function getAttrValues(el, attrs) {
+  const result = {}
+
+  for (const name of attrs) {
+    if (el.hasAttribute(name)) {
+      result[name] = el.getAttribute(name)
+    }
+  }
+
+  return result
+}

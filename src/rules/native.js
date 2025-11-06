@@ -84,15 +84,25 @@ export const max = {
  * Example: <input type="number" step="5" />
  */
 export const step = {
-  validate: (value, [step], { type }) => {
+  validate: (value, [step], { type, attrs }) => {
     if (isValid(type, step)) return true
-    return step === 'any' || Number(value) % Number(step) === 0
+
+    if (step !== 'any') {
+      const baseMin = attrs.min ? Number(attrs.min) : 0
+
+      if ((Number(value) - baseMin) % Number(step) !== 0) {
+        return false
+      }
+    }
+
+    return true
   },
   format: (value) => {
     const prev = Number(value) - 1
     const next = Number(value) + 1
     return { prev, next }
   },
+  collectAttrs: ['min'],
   message: 'Please enter a valid value. The two nearest valid values are {prev} and {next}.'
 }
 

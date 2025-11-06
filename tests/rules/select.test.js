@@ -9,7 +9,7 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest'
 import { createFormField, cleanupDocument } from '../utils/main'
 import { validateField } from '../../src/core/validate'
 import { defineRule } from '../../src/suriform'
-import { selectRules } from '../../src/rules/multi'
+import { selectRules } from '../../src/rules'
 
 describe('Select Rules', () => {
   afterEach(() => {
