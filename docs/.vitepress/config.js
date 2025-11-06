@@ -15,9 +15,9 @@ export default defineConfig({
       alt: 'Suriform logo'
     },
     nav: [
-      { text: 'Guide', link: '/guide/getting-started' },
+      { text: 'Get Started', link: '/guide/getting-started' },
+      { text: 'Guide', link: '/guide/walkthrough/rule-creation' },
       { text: 'API', link: '/core/watch-form' },
-      { text: 'Walkthrough', link: '/guide/walkthrough/rule-creation' },
       { text: 'Showcase', link: '/showcase/rules/native' }
     ],
     sidebar: {
