@@ -23,7 +23,7 @@ onMounted(() => {
     popup.addError(field, message)
   })
 
-  validity.onInvalid(({ field }) => {
+  validity.onValid(({ field }) => {
     popup.removeError(field)
   })
 

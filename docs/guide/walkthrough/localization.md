@@ -6,7 +6,7 @@ title: Localization
 
 Translate **rule messages** and **field names** into different languages by defining locale sources and switching the active locale. Validation feedback automatically adapts.
 
-## 🌐 Locale Source
+## 🗂️ Locale Source
 
 The `localize()` API requires a **locale source** to be used globally to all forms. The locale source stores a list of localized `names` and `messages` defined by a `lookup key`.
 
@@ -25,7 +25,7 @@ The `localize()` API requires a **locale source** to be used globally to all for
 
 > The following sources contain all the localized messages for the built-in rules. Use them directly, or as a reference for creating other locale source: [English](../public/locale/en.json), [French](../public/locale/fr.json)
 
-## 📦 Apply Locale
+## 🌍 Get Locale
 
 Import from an **external json** file or **declare it directly** inside your code. Importing from an external source allows you to maintain your code easily and avoid code clutter.
 
@@ -43,10 +43,6 @@ Import from an **external json** file or **declare it directly** inside your cod
 ```js
 import fr from 'somewhere'
 localize({ fr })
-
-const form = document.getElementById('#form')
-setLocale('fr')
-validateForm(form)
 ```
 
 == direct
@@ -59,10 +55,35 @@ localize({
     }
   }
 })
+```
+
+:::
+
+## 🌐 Set Locale
+
+Set a locale **globally or per form** without extra configuration. When setting a locale per form, any **active message** on that form **will update instantly** with the locale message.
+
+::: tabs
+== globally
+
+```js
+import fr from 'somewhere'
+
+localize({ fr })
+setLocale('fr')
+```
+
+== per form
+
+```js
+import fr from 'somewhere'
+import jp from 'somewhere'
+
+localize({ fr, jp })
+setLocale('jp')
 
 const form = document.getElementById('#form')
-setLocale('jp')
-validateForm(form)
+setLocale('fr', form)
 ```
 
 :::

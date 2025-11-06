@@ -78,7 +78,7 @@ validity.onReset(() => {
 
 > 💡 Learn more about managing popups with the [`withPopup()`](../../tools/with-popup.md) API.
 
-## 🧾 Summary List
+## 📋 Summary List
 
 Use `handleErrors()` to easily display a summary list with less boilerplate. For a better control, use `withSummary()` directly along with `useValidity` to interpolate each message.
 

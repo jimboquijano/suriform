@@ -19,7 +19,7 @@ defineRule('minlength', {
 })
 ```
 
-## 📋 Declaring Rules
+## 📝 Declaring Rules
 
 Delcare the **rule name** as HTML attributes, then use it to write your own logic. The `validate()` function gives you access to the field’s `value`, `params`, and `context`.
 
@@ -135,7 +135,7 @@ defineRule('min', {
 
 ## 🔄 Asynchronous
 
-Return a simple `boolean` result and use the rule’s **default message** or chain multiple conditions with **nested messages** to have a more **dynamic messaging**.
+Return a simple `boolean` result to trigger the rule’s **default message** or chain multiple conditions with **nested messages** to have a more **dynamic messaging**.
 
 ::: tabs
 == single message
@@ -203,7 +203,7 @@ defineRule('match', {
 
 ## ✅ Required-Type
 
-With the `checksRequired` flag, the system registers the rule in a different `registry` that runs an additional `isFieldRequired()` check, dedicated to **required-type** rules. Learn more information about the **validation flow** with the [validateForm()](../../core/validate-form.md) API.
+With the `checksRequired` flag, the system registers the rule in a different `registry` that runs an additional `isFieldRequired()` check, dedicated to **required-type** rules.
 
 ```js
 defineRule('required-with', {
