@@ -135,7 +135,7 @@ defineRule('min', {
 
 ## 🔄 Asynchronous Rules
 
-Return a simple `boolean` result and use the rule’s **default message** or chain multiple conditions with **nested messages** to have a more **dynamic messaging**. Learn more information on how a **message is resolved** with the [Messaging](../features/messaging.md) guide.
+Return a simple `boolean` result and use the rule’s **default message** or chain multiple conditions with **nested messages** to have a more **dynamic messaging**. Learn more information on how a **message is resolved** with the [Messaging](./messaging.md) guide.
 
 ::: tabs
 == single message
@@ -201,7 +201,7 @@ defineRule('match', {
 
 ## ✅ Required-Type Rules
 
-With the `checksRequired` flag, the system registers the rule in a different `registry` that runs an additional `isFieldRequired()` check, dedicated to **required-type** rules. Learn more information about the **validation flow** with the [validateForm()](../core/validate-form.md) API.
+With the `checksRequired` flag, the system registers the rule in a different `registry` that runs an additional `isFieldRequired()` check, dedicated to **required-type** rules. Learn more information about the **validation flow** with the [validateForm()](../../core/validate-form.md) API.
 
 ```js
 defineRule('required-with', {

@@ -34,6 +34,8 @@ const sf = watchForm(form, {
 | `validateOnInput`  | `false` | Validate on every keystroke or change                      |
 | `stopOnFirstError` | `true`  | Stop validating after the first rule fails                 |
 
+> 💡 Add a `debounce` per field with `sfdebounce`, example: `<input sfdebounce="300" />`.
+
 ## 🧾 API
 
 ### `watchForm(form, options?)`

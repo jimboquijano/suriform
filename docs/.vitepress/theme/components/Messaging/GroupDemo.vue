@@ -1,21 +1,22 @@
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { watchForm, defineRules } from '../../../../../src/suriform'
 import { extendMessage } from '../../../../../src/tools'
 import { fileRules } from '../../../../../src/rules'
 import '../../../../../src/styles/suriform.css'
 
+const formEl = ref(null)
+
 onMounted(() => {
   defineRules(fileRules)
 
-  const formEl = document.getElementById('formEl')
-  const sf = watchForm(formEl, {
+  const sf = watchForm(formEl.value, {
     validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })
 
-  const ext = extendMessage(formEl)
+  const ext = extendMessage(formEl.value)
 
   ext.groupMessage({
     rules: ['min-width', 'min-height', 'max-width', 'max-height'],
@@ -26,7 +27,7 @@ onMounted(() => {
 
 <template>
   <div class="suriform container demo">
-    <form class="card" id="formEl" autocomplete="off">
+    <form class="card" ref="formEl" autocomplete="off">
       <label>
         Size: min 200x200, max 1200x1200, max-size 300KB
         <input
@@ -44,9 +45,7 @@ onMounted(() => {
 
       <div class="actions">
         <button type="submit">Submit Form</button>
-        <button type="button" class="secondary" onclick="document.getElementById('formEl').reset()">
-          Reset
-        </button>
+        <button type="button" class="secondary" onclick="this.form.reset()">Reset</button>
       </div>
     </form>
   </div>

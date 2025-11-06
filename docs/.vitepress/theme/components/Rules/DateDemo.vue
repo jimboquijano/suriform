@@ -1,22 +1,23 @@
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { watchForm, defineRules } from '../../../../../src/suriform'
 import { watchTarget } from '../../../../../src/tools'
 import { dateRules } from '../../../../../src/rules'
 import '../../../../../src/styles/suriform.css'
 
+const formEl = ref(null)
+
 onMounted(() => {
   defineRules(dateRules)
 
-  const formEl = document.getElementById('formEl')
-  const sf = watchForm(formEl, {
+  const sf = watchForm(formEl.value, {
     validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })
 
   // prettier-ignore
-  const watcher = watchTarget(formEl, [
+  const watcher = watchTarget(formEl.value, [
     { bstartdate: 'benddate' },
     { aenddate: 'astartdate' }
   ])
@@ -25,7 +26,7 @@ onMounted(() => {
 
 <template>
   <div class="suriform container demo">
-    <form class="card" id="formEl" autocomplete="off">
+    <form class="card" ref="formEl" autocomplete="off">
       <div class="row">
         <label>
           Min date 2020-02-22
@@ -71,9 +72,7 @@ onMounted(() => {
 
       <div class="actions">
         <button type="submit">Submit Form</button>
-        <button type="button" class="secondary" onclick="document.getElementById('formEl').reset()">
-          Reset
-        </button>
+        <button type="button" class="secondary" onclick="this.form.reset()">Reset</button>
       </div>
     </form>
   </div>

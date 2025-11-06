@@ -1,8 +1,10 @@
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { watchForm, defineRule } from '../../../../../src/suriform'
 import { watchTarget } from '../../../../../src/tools'
 import '../../../../../src/styles/suriform.css'
+
+const formEl = ref(null)
 
 onMounted(() => {
   defineRule('match', {
@@ -13,20 +15,19 @@ onMounted(() => {
     message: 'Fields do not match.'
   })
 
-  const formEl = document.getElementById('formEl')
-  const sf = watchForm(formEl, {
+  const sf = watchForm(formEl.value, {
     validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })
 
-  const watcher = watchTarget(formEl, [{ foo: 'bar' }])
+  const watcher = watchTarget(formEl.value, [{ foo: 'bar' }])
 })
 </script>
 
 <template>
   <div class="suriform container demo">
-    <form class="card" id="formEl" autocomplete="off">
+    <form class="card" ref="formEl" autocomplete="off">
       <div class="row">
         <label>
           Match this:
@@ -41,9 +42,7 @@ onMounted(() => {
 
       <div class="actions">
         <button type="submit">Submit Form</button>
-        <button type="button" class="secondary" onclick="document.getElementById('formEl').reset()">
-          Reset
-        </button>
+        <button type="button" class="secondary" onclick="this.form.reset()">Reset</button>
       </div>
     </form>
   </div>

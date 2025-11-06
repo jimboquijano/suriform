@@ -27,7 +27,17 @@ export default defineConfig({
           items: [
             { text: 'What is Suriform?', link: '/guide/what-is-suriform' },
             { text: 'Main Features', link: '/guide/main-features' },
-            { text: 'Getting Started', link: '/guide/getting-started' }
+            { text: 'Getting Started', link: '/guide/getting-started' },
+            {
+              text: 'Walkthrough',
+              items: [
+                { text: 'Rule Creation', link: '/guide/walkthrough/rule-creation' },
+                { text: 'Messaging', link: '/guide/walkthrough/messaging' },
+                { text: 'Formatting', link: '/guide/walkthrough/formatting' },
+                { text: 'Localization', link: '/guide/walkthrough/localization' },
+                { text: 'Error Handling', link: '/guide/walkthrough/error-handling' }
+              ]
+            }
           ]
         },
         {
@@ -68,17 +78,6 @@ export default defineConfig({
             { text: 'fileRules', link: '/rules/file' },
             { text: 'selectRules', link: '/rules/select' },
             { text: 'requiredRules', link: '/rules/required' }
-          ]
-        },
-        {
-          text: 'Features',
-          collapsed: true,
-          items: [
-            { text: 'Rule Creation', link: '/features/rule-creation' },
-            { text: 'Messaging', link: '/features/messaging' },
-            { text: 'Formatting', link: '/features/formatting' },
-            { text: 'Localization', link: '/features/localization' },
-            { text: 'Error Handling', link: '/features/error-handling' }
           ]
         },
         {

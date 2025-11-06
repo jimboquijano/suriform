@@ -10,7 +10,7 @@
 import { retrieveFields, validateField } from './validate'
 import { resetResultCache } from './rules'
 
-export let currentLocale = initLocale()
+export let currentLocale
 export const localeRegistry = {}
 
 /**
@@ -41,6 +41,11 @@ export function localize(locales) {
         target[key] = value
       }
     }
+  }
+
+  // Set initial locale
+  if (!currentLocale) {
+    currentLocale = initLocale()
   }
 
   /**

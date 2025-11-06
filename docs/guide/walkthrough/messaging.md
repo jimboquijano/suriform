@@ -199,4 +199,4 @@ The resolver behaves differently depending on whether a **group handler** is pre
 - The **default message** is the `message` attribute defined under `defineRule()`.
 - **Group handlers** allow dynamic or contextual messages for a set of rules.
 - Fallbacks ensure that a message is **always available**, even if localization is missing.
-- This system works seamlessly with the **formatting system** [described here](../features/formatting.md).
+- This system works seamlessly with the **formatting system** [described here](./formatting.md).

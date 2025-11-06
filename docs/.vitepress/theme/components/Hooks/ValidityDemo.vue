@@ -1,22 +1,23 @@
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { watchForm, defineRules } from '../../../../../src/suriform'
 import { useValidity, withPopup } from '../../../../../src/tools'
 import { alphaRules } from '../../../../../src/rules'
 import '../../../../../src/styles/suriform.css'
 
+const formEl = ref(null)
+
 onMounted(() => {
   defineRules(alphaRules)
 
-  const formEl = document.getElementById('formEl')
-  const sf = watchForm(formEl, {
+  const sf = watchForm(formEl.value, {
     validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })
 
-  const validity = useValidity(formEl)
-  const popup = withPopup(formEl)
+  const validity = useValidity(formEl.value)
+  const popup = withPopup(formEl.value)
 
   validity.onInvalid(({ field, message }) => {
     popup.addError(field, message)
@@ -42,7 +43,7 @@ onMounted(() => {
 
 <template>
   <div class="suriform container demo">
-    <form class="card" id="formEl" autocomplete="off">
+    <form class="card" ref="formEl" autocomplete="off">
       <div class="row">
         <label>
           Alpha (letters only)
@@ -81,9 +82,7 @@ onMounted(() => {
 
       <div class="actions">
         <button type="submit">Submit Form</button>
-        <button type="button" class="secondary" onclick="document.getElementById('formEl').reset()">
-          Reset
-        </button>
+        <button type="button" class="secondary" onclick="this.form.reset()">Reset</button>
       </div>
     </form>
   </div>

@@ -121,4 +121,4 @@ const sf = watchForm(form)
 </form>
 ```
 
-> 💡 Want to go deeper? Check out the [Rule Creation](../features/rule-creation.md) guide for a full walkthrough.
+> 💡 Want to go deeper? Check out the [Rule Creation](../guide/walkthrough/rule-creation.md) guide for a full walkthrough.

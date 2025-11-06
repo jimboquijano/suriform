@@ -1,27 +1,28 @@
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { watchForm } from '../../../../../src/suriform'
 import { useAjax } from '../../../../../src/tools'
 import '../../../../../src/styles/suriform.css'
 
+const formEl = ref(null)
+
 onMounted(() => {
-  const formEl = document.getElementById('formEl')
-  const sf = watchForm(formEl, {
+  const sf = watchForm(formEl.value, {
     validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })
 
-  const ajax = useAjax(formEl)
+  const ajax = useAjax(formEl.value)
 
   ajax.onSuccess((response) => {
-    formEl.reset()
+    formEl.value.reset()
     alert('Triggered onSuccess()')
     console.log(response)
   })
 
   ajax.onError((error) => {
-    formEl.reset()
+    formEl.value.reset()
     alert('Triggered onError()')
     console.log(error)
   })
@@ -32,7 +33,7 @@ onMounted(() => {
   <div class="suriform container demo">
     <form
       class="card"
-      id="formEl"
+      ref="formEl"
       autocomplete="off"
       action="https://jsonplaceholder.typicode.com/posts"
       method="POST"
@@ -51,9 +52,7 @@ onMounted(() => {
 
       <div class="actions">
         <button type="submit">Submit Form</button>
-        <button type="button" class="secondary" onclick="document.getElementById('formEl').reset()">
-          Reset
-        </button>
+        <button type="button" class="secondary" onclick="this.form.reset()">Reset</button>
       </div>
     </form>
   </div>

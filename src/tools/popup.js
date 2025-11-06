@@ -454,6 +454,7 @@ export function applyStyles(el) {
  * Executed once per page to style popup pointers.
  */
 ;(function injectArrowStyle() {
+  if (typeof document === 'undefined') return
   if (document.getElementById('suriform-popup-arrow-style')) return
 
   const style = document.createElement('style')

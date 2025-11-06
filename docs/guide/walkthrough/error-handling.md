@@ -76,7 +76,7 @@ validity.onReset(() => {
 
 :::
 
-> 💡 Learn more about handling error popups with the [`withPopup()`](./../tools/with-popup.md) API.
+> 💡 Learn more about handling error popups with the [`withPopup()`](../../tools/with-popup.md) API.
 
 ## 🧾 Summary List
 
@@ -122,7 +122,7 @@ validity.onReset(() => {
 
 :::
 
-> 💡 Learn more about handling error popups with the [`withSummary()`](./../tools/with-summary.md) API.
+> 💡 Learn more about handling error popups with the [`withSummary()`](../../tools/with-summary.md) API.
 
 ## ⚠️ Error States
 
@@ -141,4 +141,4 @@ errors.onEmpty(() => {
 })
 ```
 
-> 💡 Learn more about handling error states with the [`handleErrors()`](./../tools/with-popup.md) API.
+> 💡 Learn more about handling error states with the [`handleErrors()`](../../tools/handle-errors.md) API.
