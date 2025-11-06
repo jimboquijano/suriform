@@ -17,7 +17,7 @@ Learn more about [Suriform](https://jimboquijano.github.io/suriform/).
 
 ## ✨ Powerful Features
 
-Suriform is packed with developer-focused features for building **dynamic**, **localized**, and **flexible** forms. Below is a quick overview — see the [**Features**](/guide/main-features) page for a full breakdown.
+Suriform is packed with developer-focused features for building **dynamic**, **localized**, and **flexible** forms. Below is a quick overview — see the [**Features**](https://jimboquijano.github.io/suriform/guide/main-features.html) page for a full breakdown.
 
 - 🧠 **Custom Rules** – Write complex async rules with dynamic messages
 - ⚡ **Built-in Rules** - Use over 50 built-in rules with native support
