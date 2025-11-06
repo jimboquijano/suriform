@@ -6,7 +6,7 @@ title: FAQ
 
 Suriform has just been released 🎉 — and while we don’t have a full FAQ yet, this page will soon cover **common questions** and **troubleshooting tips** based on real user feedback.
 
-For now, most information can be found throughout the docs — especially in **Getting Started**, **Core Concepts**, and **Rule Reference**.
+For now, most information can be found throughout the docs — especially in **Getting Started**, **Core Concepts**, **Tools API**, and **Rule Reference**.
 
 ## 📘 About This Page
 

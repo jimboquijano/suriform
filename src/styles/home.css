@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #3c3c43;
+  background: #1b1b1f;
+  font-synthesis: style;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family:
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  display: grid;
+  place-items: center; /* shorthand for justify-content & align-items */
+  height: 100vh;
+}
+
+h1.heading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 64px;
+  color: #a8b1ff;
+  margin: 0;
+}
+
+.heading .name {
+  display: block;
+}
+
+.heading .clip {
+  background: -webkit-linear-gradient(120deg, #5ac77e 30%, #7adf96);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading .text {
+  color: #dfdfd6;
+}
+
+.heading .name,
+.heading .text {
+  width: fit-content;
+  max-width: 392px;
+  letter-spacing: -1.3px;
+  line-height: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  white-space: pre-wrap;
+  text-align: center;
+  margin: 0 auto;
+}
+
+p.tagline {
+  font-style: normal;
+  font-weight: 500;
+  color: #98989f;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+.button {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 38px;
+  border-radius: 20px;
+  padding: 0 20px;
+  line-height: 38px;
+  font-size: 14px;
+  display: inline-block;
+  border: 1px solid transparent;
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    color 0.25s,
+    border-color 0.25s,
+    background-color 0.25s;
+  color: #d6d6d6;
+  background: #32363f;
+}
+
+.button:hover {
+  background: #414853;
+}
+
+.button.brand {
+  color: #fff;
+  background: #298459;
+}
+
+.button.brand:hover {
+  background: #30a46c;
+}
+
+.image-container {
+  text-align: center;
+  position: relative;
+  animation: floatOrganic 10s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.image-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  width: 192px;
+  height: 192px;
+  background-image: radial-gradient(
+    circle at center,
+    rgba(90, 199, 126, 0.35),
+    rgba(122, 223, 150, 0.2) 70%,
+    transparent 100%
+  );
+  filter: blur(44px);
+  transform: translate(-50%, -50%);
+}
+
+.image-src {
+  height: 250px;
+}
+
+@media (min-width: 640px) {
+  .heading .name,
+  .heading .text {
+    line-height: 56px;
+    font-size: 48px;
+  }
+
+  .tagline {
+    padding-top: 12px;
+    line-height: 32px;
+    font-size: 20px;
+  }
+
+  .image-bg {
+    width: 256px;
+    height: 256px;
+  }
+
+  .image-src {
+    max-width: 256px;
+    max-height: 256px;
+  }
+}
+
+@media (min-width: 960px) {
+  .heading .name,
+  .heading .text {
+    line-height: 64px;
+    font-size: 56px;
+  }
+
+  .heading .name + .text {
+    font-size: 40px;
+    line-height: 56px;
+  }
+
+  .tagline {
+    line-height: 36px;
+    font-size: 24px;
+  }
+
+  .image-bg {
+    width: 320px;
+    height: 320px;
+  }
+
+  .image-src {
+    max-width: 320px;
+    max-height: 320px;
+  }
+}
+
+/* ==========================================================================
+    ANIMATIONS
+   ========================================================================== */
+
+/* Subtle floating organic motion for hero image */
+@keyframes floatOrganic {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+  }
+  15% {
+    transform: translateY(-2px) translateX(1px) rotate(-0.5deg) scale(1.01);
+  }
+  30% {
+    transform: translateY(1px) translateX(3px) rotate(0.5deg) scale(0.99);
+  }
+  45% {
+    transform: translateY(-1px) translateX(-2px) rotate(-0.3deg) scale(1.02);
+  }
+  60% {
+    transform: translateY(2px) translateX(-1px) rotate(0.7deg) scale(0.98);
+  }
+  75% {
+    transform: translateY(-1px) translateX(2px) rotate(-0.6deg) scale(1.01);
+  }
+  90% {
+    transform: translateY(1px) translateX(-3px) rotate(0.4deg) scale(0.99);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+  }
+}
