@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home -->
+  <url>
+    <loc>https://jimboquijano.github.io/suriform/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Guide -->
+  <url><loc>https://jimboquijano.github.io/suriform/guide/what-is-suriform</loc><priority>0.9</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/guide/main-features</loc><priority>0.9</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/guide/getting-started</loc><priority>0.9</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/guide/walkthrough/rule-creation</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/guide/walkthrough/messaging</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/guide/walkthrough/formatting</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/guide/walkthrough/localization</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/guide/walkthrough/error-handling</loc><priority>0.8</priority></url>
+
+  <!-- Core -->
+  <url><loc>https://jimboquijano.github.io/suriform/core/watch-form</loc><priority>0.9</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/core/validate-form</loc><priority>0.9</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/core/reset-form</loc><priority>0.9</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/core/define-rule</loc><priority>0.9</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/core/localize</loc><priority>0.9</priority></url>
+
+  <!-- Tools -->
+  <url><loc>https://jimboquijano.github.io/suriform/tools/use-validity</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/tools/use-ajax</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/tools/handle-errors</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/tools/first-error</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/tools/with-summary</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/tools/with-popup</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/tools/extend-message</loc><priority>0.8</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/tools/watch-target</loc><priority>0.8</priority></url>
+
+  <!-- Rules -->
+  <url><loc>https://jimboquijano.github.io/suriform/rules/native</loc><priority>0.7</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/rules/alpha</loc><priority>0.7</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/rules/string</loc><priority>0.7</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/rules/number</loc><priority>0.7</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/rules/compare</loc><priority>0.7</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/rules/date</loc><priority>0.7</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/rules/file</loc><priority>0.7</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/rules/select</loc><priority>0.7</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/rules/required</loc><priority>0.7</priority></url>
+
+  <!-- Showcase -->
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/hooks/ajax</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/hooks/validity</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/custom/async</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/custom/conditional</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/feedbacks/popup</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/feedbacks/summary</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/feedbacks/errors</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/messaging/locale</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/messaging/group</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/messaging/wrap</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/rules/native</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/rules/alpha</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/rules/string</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/rules/number</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/rules/compare</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/rules/date</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/rules/file</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/rules/select</loc><priority>0.6</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/showcase/rules/required</loc><priority>0.6</priority></url>
+
+  <!-- Community -->
+  <url><loc>https://jimboquijano.github.io/suriform/community/contributing</loc><priority>0.5</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/community/changelog</loc><priority>0.5</priority></url>
+  <url><loc>https://jimboquijano.github.io/suriform/community/faq</loc><priority>0.5</priority></url>
+</urlset>
