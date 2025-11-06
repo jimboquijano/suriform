@@ -51,10 +51,10 @@ Defining **custom rules** feels just as natural. It **extends HTML attributes** 
 - **The `Core`**:  
   Provides a powerful **rules engine**, flexibile **localization engine**, and APIs to get you started real quick, making it perfect for forms of any size — from small to large.
 
-- The `Tools`:  
+- **The `Tools`**:  
   Offers an extensive set of utilities designed to give developers **fine-grained control** over form behavior including error handling, feedbacks, lifecycle events and hooks.
 
-- The `Rules`:  
+- **The `Rules`**:  
   Delivers **50+ built-in validation rules** — including **files**, **dates**, **multi-selects**, **cross-field**, **required-types **, and full support for all **native browser rules**.
 
 ## ✨ Powerful Features

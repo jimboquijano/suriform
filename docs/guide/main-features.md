@@ -25,8 +25,8 @@ Suriform provides a **flexible toolkit** for form handling — **rules**, **mess
 
 - **Control** messages at multiple levels: Rule, Locale, & Group
 - **Format** `{tokens}` consistently using: Positional & Key–value
-- **Wrap** inline messages using the `wrapMessage` tool for templating.
-- **Group** related rules with the `groupMessage` tool for extra formatting.
+- **Wrap** inline errors using the `wrapMessage` tool for templating.
+- **Group** rules with the `groupMessage` tool for unified messaging.
 
 ## 🌍 **Localization**
 

@@ -20,6 +20,7 @@ All notable changes made to **Suriform** are recorded in this document. Each upd
   - ⚠️ **Error Handling** – Inline, popup, and summary error feedbacks
   - 🧩 **Events & Hooks** – Extend behavior through validation lifecycle hooks
   - 👁️ **Watchers** – Reactively observe and respond to form or field changes
+- We’d love your feedback, pull requests, issues, or any ideas you have 🚀
 
 ### Changed
 
