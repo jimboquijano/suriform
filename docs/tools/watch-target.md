@@ -27,6 +27,7 @@ const watcher = watchTarget(form, [
 
 - Each registry item maps a **dependent field** to one or more **target field names**.
 - Changes in target fields automatically re-validate the dependent field.
+- Multiple targets can trigger the same dependent field validation.
 
 ## 🧾 API
 
@@ -48,8 +49,4 @@ An object with control methods:
 | `reconnect()`  | Starts or resumes monitoring all target dependencies. |
 | `disconnect()` | Stops monitoring and removes all event listeners.     |
 
-## 🔍 Caution
-
-- The watcher **only monitors fields specified** in the registry.
-- Multiple targets can trigger the same dependent field validation.
-- Use `disconnect()` to clean up listeners when the form is removed.
+> 💡 Use `disconnect()` to clean up listeners when the form is removed.
