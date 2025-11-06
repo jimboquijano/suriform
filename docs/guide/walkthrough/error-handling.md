@@ -8,7 +8,7 @@ Manage **validation feedback** through multiple layers — from **inline message
 
 ## 💬 Inline Errors
 
-When a form field fails validation, an **error block** is created. These error blocks are handled internally and are **cached effeciently** for a faster render times. Both the field and the **error block** comes with **full ARIA support** for a better accesibility and reading.
+When a form field fails validation, an **error block** is created. These error blocks are handled internally and are **cached efficiently** for faster render times. Both the field and the **error block** come with **full ARIA support** for better accesibility and reading.
 
 ### Supressing Inline
 
@@ -50,8 +50,8 @@ const errors = handleErrors(form, {
 
 ```js
 const form = document.querySelector('#signup')
-const validity = useValidity(formEl)
-const popup = withPopup(formEl)
+const validity = useValidity(form)
+const popup = withPopup(form)
 
 validity.onInvalid(({ field, message }) => {
   popup.addError(field, message)
@@ -76,11 +76,11 @@ validity.onReset(() => {
 
 :::
 
-> 💡 Learn more about managing popup with the [`withPopup()`](../../tools/with-popup.md) API.
+> 💡 Learn more about managing popups with the [`withPopup()`](../../tools/with-popup.md) API.
 
 ## 🧾 Summary List
 
-Use `handleErrors()` to easily display summary list with less boilerplate. For a better control, use `withSummary()` directly along with `useValidity` to interpolate each message.
+Use `handleErrors()` to easily display a summary list with less boilerplate. For a better control, use `withSummary()` directly along with `useValidity` to interpolate each message.
 
 ::: tabs
 == handleErrors
@@ -96,8 +96,8 @@ const errors = handleErrors(form, {
 
 ```js
 const form = document.querySelector('#signup')
-const validity = useValidity(formEl)
-const popup = withSummary(formEl)
+const validity = useValidity(form)
+const popup = withSummary(form)
 
 validity.onInvalid(({ field, message }) => {
   popup.addError(field, message)
@@ -126,7 +126,7 @@ validity.onReset(() => {
 
 ## ⚠️ Error States
 
-The `handleErrors()` tool is not just for **displaying feedbacks**. It also provides a full control to **track errors statefully**. Under the hood, it uses the `useValidity()` to observe the form.
+The `handleErrors()` tool is not just for **displaying feedback**. It also provides a full control to **track errors statefully**. Under the hood, it uses the `useValidity()` to observe the form.
 
 ```js
 const form = document.querySelector('#login')
