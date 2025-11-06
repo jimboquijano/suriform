@@ -1,0 +1,382 @@
+/* ==========================================================================
+    LIGHT MODE OVERRIDES
+   ========================================================================== */
+:root {
+  /* === Brand Colors (Green Theme) === */
+  --vp-c-brand-1: #28a745; /* Primary green */
+  --vp-c-brand-2: #218838; /* Darker hover/active state */
+  --vp-c-brand-3: #1e7e34; /* Deepest accent green */
+  --vp-c-brand-soft: rgba(40, 167, 69, 0.16); /* Soft translucent variant */
+  --vp-c-brand: var(--vp-c-brand-1); /* Alias for brand references */
+
+  /* === Brand Integration for Hero, Tips & Notes === */
+  --vp-home-hero-name-color: var(--vp-c-brand-1);
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-note-1: var(--vp-c-brand-1);
+  --vp-c-note-2: var(--vp-c-brand-2);
+  --vp-c-note-3: var(--vp-c-brand-3);
+  --vp-c-note-soft: var(--vp-c-brand-soft);
+
+  /* === Hero Section Styling === */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #56b776 30%,
+    #7acf8c /* lighter soft green */
+  );
+  --vp-home-hero-image-background-image: radial-gradient(
+    circle at center,
+    rgba(86, 183, 118, 0.5),
+    rgba(122, 207, 140, 0.3) 70%,
+    transparent 100%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+/* ==========================================================================
+    DARK MODE OVERRIDES
+   ========================================================================== */
+.dark {
+  /* === Brand Colors (Dark Green Theme) === */
+  --vp-c-brand-1: #3dd68c; /* Bright mint accent */
+  --vp-c-brand-2: #30a46c; /* Medium green */
+  --vp-c-brand-3: #298459; /* Deep forest tone */
+  --vp-c-brand-soft: rgba(16, 185, 129, 0.16); /* Soft green overlay */
+  --vp-c-brand: var(--vp-c-brand-1); /* Alias */
+
+  /* === Brand Integration === */
+  --vp-home-hero-name-color: var(--vp-c-brand-1);
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-note-1: var(--vp-c-brand-1);
+  --vp-c-note-2: var(--vp-c-brand-2);
+  --vp-c-note-3: var(--vp-c-brand-3);
+  --vp-c-note-soft: var(--vp-c-brand-soft);
+
+  /* === Hero Section Styling === */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #5ac77e 30%,
+    #7adf96 /* light green highlight */
+  );
+  --vp-home-hero-image-background-image: radial-gradient(
+    circle at center,
+    rgba(90, 199, 126, 0.35),
+    rgba(122, 223, 150, 0.2) 70%,
+    transparent 100%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+/* ==========================================================================
+    COMPONENTS & LAYOUT
+   ========================================================================== */
+
+/* Navbar divider color */
+.VPNavBar.home .divider {
+  background-color: var(--vp-c-gutter);
+}
+
+/* Feature card borders */
+.VPFeatures .VPFeature {
+  border: 1px solid var(--vp-c-gray-3);
+}
+
+/* --- Center the hero section content --- */
+.VPHero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px)) !important;
+  padding-bottom: 0 !important;
+
+  .container {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Hero image float + spacing */
+  .image {
+    order: 1 !important;
+    margin: -108px -24px -48px !important;
+
+    .image-container {
+      position: relative;
+      animation: floatOrganic 10s ease-in-out infinite;
+      transform-origin: center center;
+      width: 392px;
+      height: 392px;
+    }
+  }
+
+  /* Main text container */
+  .main {
+    max-width: none !important;
+    width: 100% !important;
+    order: 2 !important;
+
+    .heading {
+      text-align: center;
+
+      .name {
+        margin: 0 auto;
+      }
+
+      .name + .text {
+        max-width: none;
+        margin: 12px auto 0;
+      }
+    }
+
+    .tagline {
+      max-width: none !important;
+    }
+  }
+
+  .actions {
+    justify-content: center !important;
+  }
+}
+
+/* Center hero text and buttons */
+.VPHero .main,
+.VPHero .heading,
+.VPHero .tagline,
+.VPHero .actions {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* Hero image sizing */
+.VPImage.image-src {
+  height: 250px;
+}
+
+/* Home container width */
+.home .container,
+.is-home .container {
+  max-width: 1260px !important;
+}
+
+/* Markdown tables */
+.vp-doc table {
+  display: table;
+  width: 100%;
+}
+
+/* Hero image blur orb */
+.image-bg {
+  background-image: var(--vp-home-hero-image-background-image);
+  width: 192px;
+  height: 192px;
+  filter: var(--vp-home-hero-image-filter);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Dashed divider under details elements */
+details > *:last-child {
+  border-bottom: 1px dashed var(--vp-c-divider);
+  padding-bottom: 20px;
+}
+
+/* ==========================================================================
+    DEMO
+   ========================================================================== */
+
+.demo {
+  margin: 20px auto 0;
+
+  --bg: #ffffff;
+  --card: #f9f9f9;
+  --text: #111111;
+  --text2: #98989f;
+  --border: #e6e9ef;
+  --secondary-bg: #f3f4f6;
+  --secondary-text: #111;
+
+  .card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  input,
+  select,
+  button {
+    margin: 5px 0;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  select {
+    appearance: auto;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+  }
+
+  .note {
+    color: var(--text2);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .row-toggle {
+    grid-template-columns: calc(95% - 0.75rem) 5%;
+  }
+
+  input[type='text'],
+  input[type='password'],
+  input[type='number'],
+  input[type='email'],
+  input[type='url'],
+  input[type='date'],
+  input[type='file'],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  input[aria-invalid='true'],
+  select[aria-invalid='true'],
+  textarea[aria-invalid='true'] {
+    --color-error: #dc3545;
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-error) 15%, transparent);
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid rgba(59, 130, 246, 0.12);
+    border-color: var(--vp-c-brand-2accent);
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  button {
+    background: var(--vp-c-brand-3);
+    color: var(--text);
+    border-radius: 20px;
+    padding: 0 20px;
+    line-height: 38px;
+    font-size: 14px;
+  }
+
+  button.secondary {
+    background: var(--vp-c-brand-soft);
+  }
+
+  button.secondary:hover {
+    background: var(--vp-c-brand-soft);
+  }
+}
+
+.vp-doc ul.suriform-summary {
+  padding-left: 2.25rem;
+  margin: 0 0 16px;
+
+  li + li {
+    margin-top: 0.25em;
+  }
+}
+
+.dark .demo {
+  --bg: #1b1b1f;
+  --card: #1d1e22;
+  --text: #e5e5e5;
+  --text2: #98989f;
+  --border: #333333;
+}
+
+/* ==========================================================================
+    BREAKPOINTS
+   ========================================================================== */
+@media (min-width: 640px) {
+  .heading {
+    .name + .text {
+      font-size: 34px;
+      line-height: 45px;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .heading {
+    .name + .text {
+      font-size: 40px;
+      line-height: 56px;
+    }
+  }
+}
+
+/* ==========================================================================
+    ANIMATIONS
+   ========================================================================== */
+
+/* Subtle floating organic motion for hero image */
+@keyframes floatOrganic {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+  }
+  15% {
+    transform: translateY(-2px) translateX(1px) rotate(-0.5deg) scale(1.01);
+  }
+  30% {
+    transform: translateY(1px) translateX(3px) rotate(0.5deg) scale(0.99);
+  }
+  45% {
+    transform: translateY(-1px) translateX(-2px) rotate(-0.3deg) scale(1.02);
+  }
+  60% {
+    transform: translateY(2px) translateX(-1px) rotate(0.7deg) scale(0.98);
+  }
+  75% {
+    transform: translateY(-1px) translateX(2px) rotate(-0.6deg) scale(1.01);
+  }
+  90% {
+    transform: translateY(1px) translateX(-3px) rotate(0.4deg) scale(0.99);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+  }
+}

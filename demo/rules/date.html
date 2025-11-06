@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Validation Showcase — Date Rules</title>
+    <link rel="stylesheet" href="../../src/styles/suriform.css" />
+    <link rel="stylesheet" href="../../src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Validation Showcase — Date Rules</h1>
+
+      <form class="card" id="formEl" autocomplete="off">
+        <fieldset>
+          <legend>
+            Self Check -- <code>min-date</code>, <code>max-date</code>, <code>date-between</code>
+          </legend>
+
+          <div class="row">
+            <label>
+              Min date 2020-02-22
+              <input type="date" name="mind" min-date="2020-02-22" required />
+            </label>
+
+            <label>
+              Max date 2020-02-22
+              <input type="date" name="maxd" max-date="2020-02-22" required />
+            </label>
+          </div>
+
+          <div class="row">
+            <label>
+              Date between 2020-02-22 and 2022-02-22
+              <input type="date" name="dbetween" date-between="2020-02-22,2022-02-22" required />
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit">Submit Form</button>
+          <button
+            type="button"
+            class="secondary"
+            onclick="document.getElementById('formEl').reset()"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+
+      <form class="card" id="formElTarget" autocomplete="off">
+        <fieldset>
+          <legend>Target Check -- <code>date-before</code>, <code>date-after</code></legend>
+
+          <div class="row">
+            <label>
+              Start date must be before end date
+              <input type="date" name="bstartdate" date-before="benddate" required />
+            </label>
+
+            <label>
+              End date
+              <input type="date" name="benddate" required />
+            </label>
+          </div>
+
+          <div class="row">
+            <label>
+              Start date
+              <input type="date" name="astartdate" required />
+            </label>
+
+            <label>
+              End date must be after start date
+              <input type="date" name="aenddate" date-after="astartdate" required />
+              <small class="note">Use start date to validate</small>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit">Submit Form</button>
+          <button
+            type="button"
+            class="secondary"
+            onclick="document.getElementById('formElTarget').reset()"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script type="module">
+      import { watchForm, defineRules } from '../../src/suriform'
+      import { dateRules } from '../../src/rules'
+      import { watchTarget } from '../../src/tools'
+
+      defineRules(dateRules)
+
+      const formEl = document.getElementById('formEl')
+      const formElTarget = document.getElementById('formElTarget')
+
+      const suriform = watchForm(formEl, {
+        validateOnSubmit: true,
+        validateOnInput: true,
+        stopOnFirstError: false
+      })
+
+      const suriformTarget = watchForm(formElTarget, {
+        validateOnSubmit: true,
+        validateOnInput: true,
+        stopOnFirstError: false
+      })
+
+      const watcher = watchTarget(formElTarget, [
+        { bstartdate: 'benddate' },
+        { aenddate: 'astartdate' }
+      ])
+    </script>
+  </body>
+</html>

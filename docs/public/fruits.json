@@ -1,0 +1,10 @@
+[
+  { "name": "Apple", "group": "Fruit" },
+  { "name": "Banana", "group": "Fruit" },
+  { "name": "Cherry", "group": "Fruit" },
+  { "name": "Carrot", "group": "Vegetable" },
+  { "name": "Broccoli", "group": "Vegetable" },
+  { "name": "Spinach", "group": "Vegetable" },
+  { "name": "Orange", "group": "Fruit" },
+  { "name": "Fig", "group": "Fruit" }
+]

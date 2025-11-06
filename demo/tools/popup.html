@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Validation Showcase — Popup Tool</title>
+    <link rel="stylesheet" href="../../src/styles/suriform.css" />
+    <link rel="stylesheet" href="../../src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Validation Showcase — Popup Tool</h1>
+
+      <form class="card" id="formEl" autocomplete="off">
+        <fieldset>
+          <legend>
+            Self Check -- <code>alpha</code>, <code>alpha-dash</code>, <code>alpha-num</code>,
+            <code>alpha-spaces</code>, <code>alpha-num-spaces</code>
+          </legend>
+
+          <div class="row">
+            <label>
+              Alpha (letters only)
+              <input type="text" name="alpha" alpha required />
+              <small class="note">Example: John</small>
+            </label>
+
+            <label>
+              Alpha-dash (letters, - and _)
+              <input type="text" name="aldash" alpha-dash required />
+              <small class="note">Example: hello-world</small>
+            </label>
+          </div>
+
+          <div class="row">
+            <label>
+              Alpha-num (letters and numbers)
+              <input type="text" name="alnum" alpha-num required />
+              <small class="note">Example: ABC123</small>
+            </label>
+
+            <label>
+              Alpha-spaces (letters and spaces)
+              <input type="text" name="alspaces" alpha-spaces required />
+              <small class="note">Example: John Doe</small>
+            </label>
+          </div>
+
+          <div class="row">
+            <label>
+              Alpha-num-spaces (letters, number & spaces)
+              <input type="text" name="alnumspaces" alpha-num-spaces required />
+              <small class="note">Example: John Doe 67</small>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit">Submit Form</button>
+          <button
+            type="button"
+            class="secondary"
+            onclick="document.getElementById('formEl').reset()"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script type="module">
+      import { watchForm, defineRules, localize, setLocale } from '../../src/suriform'
+      import { alphaRules } from '../../src/rules'
+      import { useError, useValidity, withPopup } from '../../src/tools'
+
+      defineRules(alphaRules)
+
+      const formEl = document.getElementById('formEl')
+
+      const suriform = watchForm(formEl, {
+        validateOnSubmit: true,
+        validateOnInput: true,
+        stopOnFirstError: false
+      })
+
+      const popup = withPopup(formEl)
+      const validity = useValidity(formEl)
+      const error = useError(formEl)
+
+      validity.onInvalid((field, error) => {
+        popup.showError(field, error)
+      })
+
+      validity.onValid((field) => {
+        popup.hideError(field)
+      })
+    </script>
+  </body>
+</html>

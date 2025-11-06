@@ -1,0 +1,274 @@
+/* ==========================================================================
+   Suriform Default Styling (Themed + Adaptive)
+   --------------------------------------------------------------------------
+   Provides clean, theme-ready defaults for forms, inline errors, summaries,
+   and highlights. Designed for minimal layout shift and accessible feedback.
+   ========================================================================== */
+
+:root {
+  /* --------------------------------------------------------------------------
+     THEME VARIABLES
+     -------------------------------------------------------------------------- */
+  --sf-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --sf-font-size: 15px;
+
+  /* Base colors */
+  --sf-color-text: #222;
+  --sf-color-bg: #fff;
+  --sf-color-border: #ccc;
+
+  /* Focus & accent */
+  --sf-color-accent: #0078f2;
+  --sf-color-accent-hover: #005ec0;
+
+  /* Error colors */
+  --sf-color-error: #dc3545;
+  --sf-color-error-bg: #f8d7da;
+  --sf-color-error-border: #f5c2c7;
+  --sf-color-error-text: #842029;
+
+  /* Validation states */
+  --sf-color-neutral: #d1d5db;
+  --sf-color-valid: #10b981;
+  --sf-color-busy: #60a5fa;
+  --sf-color-busy-glow: rgba(96, 165, 250, 0.2);
+
+  /* Button */
+  --sf-btn-bg: var(--sf-color-accent);
+  --sf-btn-bg-hover: var(--sf-color-accent-hover);
+  --sf-btn-text: #fff;
+
+  /* Highlight */
+  --sf-highlight-color: var(--sf-color-accent);
+  --sf-highlight-color-dark: #60a5fa;
+
+  /* Radius and transitions */
+  --sf-radius: 6px;
+  --sf-transition: 0.2s ease;
+}
+
+.suriform {
+  /* --------------------------------------------------------------------------
+     FORM BASELINE
+     -------------------------------------------------------------------------- */
+  [suriform],
+  form {
+    display: block;
+    width: 100%;
+    font-family: var(--sf-font-family);
+    font-size: var(--sf-font-size);
+    color: var(--sf-color-text);
+    line-height: 1.5;
+    box-sizing: border-box;
+  }
+
+  /* --------------------------------------------------------------------------
+     INPUTS
+     -------------------------------------------------------------------------- */
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.6em 0.75em;
+    border: 1px solid var(--sf-color-border);
+    border-radius: var(--sf-radius);
+    background: var(--sf-color-bg);
+    color: inherit;
+    transition:
+      border-color var(--sf-transition),
+      box-shadow var(--sf-transition);
+    box-sizing: border-box;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid color-mix(in srgb, var(--sf-color-accent) 20%, transparent);
+    border-color: var(--sf-color-accent);
+  }
+
+  input[aria-invalid],
+  select[aria-invalid],
+  textarea[aria-invalid] {
+    border-color: var(--sf-color-neutral);
+  }
+
+  input[aria-invalid='true'],
+  select[aria-invalid='true'],
+  textarea[aria-invalid='true'] {
+    border-color: var(--sf-color-error);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--sf-color-error) 15%, transparent);
+  }
+
+  input[aria-invalid='false'],
+  select[aria-invalid='false'],
+  textarea[aria-invalid='false'] {
+    border-color: var(--sf-color-valid);
+  }
+
+  [aria-busy='true'] {
+    border-color: var(--sf-color-busy);
+    box-shadow: 0 0 0 3px var(--sf-color-busy-glow);
+    animation: suriform-pulse 1s ease-in-out infinite;
+    cursor: wait;
+  }
+
+  @keyframes suriform-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 3px var(--sf-color-busy-glow);
+    }
+    50% {
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--sf-color-busy) 30%, transparent);
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     BUTTONS
+     -------------------------------------------------------------------------- */
+  button,
+  input[type='submit'],
+  input[type='button'] {
+    cursor: pointer;
+    background: var(--sf-btn-bg);
+    border: none;
+    color: var(--sf-btn-text);
+    padding: 0.6em 1.2em;
+    border-radius: var(--sf-radius);
+    font-weight: 500;
+    transition: background var(--sf-transition);
+  }
+
+  button:hover,
+  input[type='submit']:hover {
+    background: var(--sf-btn-bg-hover);
+  }
+}
+
+/* --------------------------------------------------------------------------
+     INLINE ERROR
+   -------------------------------------------------------------------------- */
+.suriform-error {
+  display: block;
+  font-size: 0.875em;
+  color: var(--sf-color-error);
+  margin-top: 0.25em;
+  padding-left: 2px;
+}
+
+.suriform-error-popup {
+  position: absolute;
+  background: #fef1f1;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.15s;
+}
+
+.suriform-error-popup.show {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+     SUMMARY
+   -------------------------------------------------------------------------- */
+.suriform-summary {
+  border: 1px solid var(--sf-color-error-border);
+  background: var(--sf-color-error-bg);
+  color: var(--sf-color-error-text);
+  padding: 0.75em 1em;
+  border-radius: var(--sf-radius);
+  list-style: none;
+  margin: 0.25em 0 0 1.25em;
+  padding-left: 2.25rem;
+  margin-bottom: 1em;
+  font-size: 0.95em;
+}
+
+.suriform-summary li {
+  margin: 0.25em 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.suriform-summary li:hover {
+  color: var(--sf-color-error);
+  text-decoration: underline;
+}
+
+.suriform-summary li span {
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+     HIGHLIGHT (linked from summary hover)
+   -------------------------------------------------------------------------- */
+.suriform-highlight {
+  outline: 2px solid var(--sf-highlight-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 6px 1px color-mix(in srgb, var(--sf-highlight-color) 60%, transparent);
+  background-color: color-mix(in srgb, var(--sf-highlight-color) 8%, transparent);
+  transition:
+    outline-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+     ANIMATIONS
+   -------------------------------------------------------------------------- */
+@keyframes suriform-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes suriform-slide-down {
+  from {
+    transform: translateY(-4px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   DARK MODE OVERRIDES
+   -------------------------------------------------------------------------- */
+
+.dark {
+  --sf-color-text: #eee;
+  --sf-color-bg: #1e1f22;
+  --sf-color-border: #333;
+
+  --sf-color-accent: #339aff;
+  --sf-color-accent-hover: #1e7ddb;
+
+  --sf-color-error: #ff6b6b;
+  --sf-color-error-bg: #3a1f1f;
+  --sf-color-error-border: #552828;
+  --sf-color-error-text: #ffb3b3;
+
+  --sf-color-neutral: #555;
+  --sf-color-valid: #22c55e;
+  --sf-color-busy: #3b82f6;
+  --sf-color-busy-glow: rgba(59, 130, 246, 0.25);
+
+  --sf-btn-bg: var(--sf-color-accent);
+  --sf-btn-bg-hover: var(--sf-color-accent-hover);
+  --sf-btn-text: #fff;
+
+  --sf-highlight-color: var(--sf-highlight-color-dark);
+}

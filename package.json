@@ -1,0 +1,79 @@
+{
+  "name": "suriform",
+  "version": "1.0.0",
+  "description": "The Form Validation for the Modern Web.",
+  "author": "Jimbo Quijano",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "form",
+    "forms",
+    "validation",
+    "submit",
+    "input",
+    "html5",
+    "library",
+    "frontend",
+    "attributes"
+  ],
+  "main": "dist/suriform.umd.js",
+  "module": "dist/suriform.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/suriform.es.js",
+      "require": "./dist/suriform.umd.js"
+    },
+    "./rules": {
+      "import": "./dist/suriform-rules.es.js",
+      "require": "./dist/suriform-rules.umd.js"
+    },
+    "./tools": {
+      "import": "./dist/suriform-tools.es.js",
+      "require": "./dist/suriform-tools.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build:core": "vite build --config vite.config.core.js",
+    "build:rules": "vite build --config vite.config.rules.js",
+    "build:tools": "vite build --config vite.config.tools.js",
+    "build": "npm run build:core && npm run build:rules && npm run build:tools",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@vitest/ui": "^3.2.4",
+    "clean-css": "^5.3.3",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^15.3.0",
+    "jsdom": "^27.0.0",
+    "prettier": "^3.6.2",
+    "sass-embedded": "^1.93.2",
+    "terser": "^5.31.1",
+    "vite": "^7.1.7",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-tabs": "^0.7.3",
+    "vitest": "^3.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimzqui/suriform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jimzqui/suriform/issues"
+  },
+  "homepage": "https://github.com/jimzqui/suriform#readme"
+}
