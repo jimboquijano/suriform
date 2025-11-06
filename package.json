@@ -12,9 +12,13 @@
     "submit",
     "input",
     "html5",
+    "javascript",
+    "framework",
     "library",
     "frontend",
-    "attributes"
+    "attributes",
+    "vue",
+    "react"
   ],
   "main": "dist/suriform.umd.js",
   "module": "dist/suriform.es.js",
