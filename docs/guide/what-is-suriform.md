@@ -71,4 +71,4 @@ Suriform is packed with developer-focused features for building **dynamic**, **l
 
 ## 🧪 Reliability & Testing
 
-Suriform is built with a strong focus on **stability** and **test coverage**. It currently has **100% coverage** in **386 passing tests across 83 files**, ensuring every feature works as intended.
+Suriform is built with a strong focus on **stability** and **test coverage**. It currently has **100% coverage** in **389 passing tests across 81 files**, ensuring every feature works as intended.
