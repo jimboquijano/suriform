@@ -94,6 +94,9 @@ export function withPopup(form, options = {}) {
 
     // Initial popup positioning
     positionPopup(field, wrapper)
+
+    // Attach visibility observer
+    wrapper.__sfVisibility = observeVisibility(field, removeError)
   }
 
   /**
@@ -332,6 +335,12 @@ export function cleanupPopup(field, popups) {
     delete wrapper.__sfReposition
   }
 
+  // Disconnect visibility observer
+  if (wrapper.__sfVisibility) {
+    wrapper.__sfVisibility.disconnect()
+    delete wrapper.__sfVisibility
+  }
+
   // Remove the popup element from the DOM
   wrapper.remove()
 
@@ -415,6 +424,33 @@ export function updateExisting(wrapper, message, field) {
   }
 
   positionPopup(field, wrapper)
+}
+
+/**
+ * Observes the visibility of the form containing a field and removes the
+ * popup if the form is no longer visible (e.g., hidden tab).
+ *
+ * @param {HTMLElement} field - The form field whose popup should be monitored.
+ * @param {Function} removeError - Callback to remove the popup.
+ * @returns {IntersectionObserver} Observer instance to disconnect later.
+ */
+function observeVisibility(field, removeError) {
+  const form = field.form
+  if (!form) return null
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          removeError(field)
+        }
+      })
+    },
+    { root: null, threshold: 0 }
+  )
+
+  observer.observe(form)
+  return observer
 }
 
 /**
