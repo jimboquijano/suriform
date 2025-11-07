@@ -34,7 +34,7 @@ message.wrapMessage(({ field, message }) => {
 
 ## 💭 Error Popups
 
-Use `handleErrors()` to easily display error popups with less boilerplate. For a better control, use `withPopup()` directly along with `useValidity` to interpolate each message.
+Use `handleErrors()` to easily display error popups with less boilerplate. For a better control, use `withPopup()` along with `useValidity` to interpolate each message.
 
 ::: tabs
 == handleErrors
@@ -80,7 +80,7 @@ validity.onReset(() => {
 
 ## 📋 Summary List
 
-Use `handleErrors()` to easily display a summary list with less boilerplate. For a better control, use `withSummary()` directly along with `useValidity` to interpolate each message.
+Use `handleErrors()` to easily display a summary list with less boilerplate. For a better control, use `withSummary()` along with `useValidity` to interpolate each message.
 
 ::: tabs
 == handleErrors

@@ -14,13 +14,11 @@ onMounted(() => {
   localize({ en, fr })
 
   const sf = watchForm(formEl.value, {
-    validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })
 
   selectEl.value.addEventListener('change', (e) => {
-    console.log(e.target.value)
     setLocale(e.target.value, formEl.value)
   })
 })

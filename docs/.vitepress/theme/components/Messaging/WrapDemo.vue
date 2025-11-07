@@ -11,7 +11,6 @@ onMounted(() => {
   defineRules(alphaRules)
 
   const sf = watchForm(formEl.value, {
-    validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })
@@ -19,7 +18,6 @@ onMounted(() => {
   const ext = extendMessage(formEl.value)
 
   ext.wrapMessage(({ message }) => {
-    console.log(message)
     return `<div class="my-error" style="background:blue">${message}</div>`
   })
 })

@@ -63,4 +63,4 @@ A `Promise` resolving to an object with the following shape:
 3. `triggerHooks()` — Emits reactive field-level hooks (`onValid`, `onInvalid`).
 4. `showError()` / `hideError()` — Toggles inline error display per field.
 
-> This design ensures consistent behavior across full-form and field-level validations.
+> This design ensures consistent behavior across form and field validations.

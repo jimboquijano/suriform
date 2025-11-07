@@ -18,7 +18,6 @@ import { watchForm } from 'suriform'
 const form = document.querySelector('form')
 
 const sf = watchForm(form, {
-  validateOnSubmit: true,
   validateOnBlur: true,
   debounce: 300
 })
@@ -34,7 +33,11 @@ const sf = watchForm(form, {
 | `validateOnInput`  | `false` | Validate on every keystroke or change                      |
 | `stopOnFirstError` | `true`  | Stop validating after the first rule fails                 |
 
-> 💡 Add a `debounce` per field with `sfdebounce`, example: `<input sfdebounce="300" />`.
+Add a dedicated `debounce` for a field, using the `sfdebounce` attribute.
+
+```html
+<input type="text" sfdebounce="300" />
+```
 
 ## 🧾 API
 

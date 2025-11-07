@@ -10,7 +10,6 @@ onMounted(() => {
   defineRules(stringRules)
 
   const sf = watchForm(formEl.value, {
-    validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })

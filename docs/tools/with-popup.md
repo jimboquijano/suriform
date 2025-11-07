@@ -16,7 +16,9 @@ import { withPopup } from 'suriform/tools'
 
 ```js
 const form = document.querySelector('#signup')
-const popup = withPopup(form)
+const popup = withPopup(form, {
+  displaySingle: false
+})
 
 popup.addError(form.username, 'Username is required!')
 popup.removeError(form.username)

@@ -17,33 +17,15 @@ import { alphaRules } from 'suriform/rules'
 
 defineRule('username', {
   async validate(value) {
-    if (!value) return true
-
-    try {
-      const res = await fetch(`https://dummyjson.com/users/search?q=${encodeURIComponent(value)}`)
-
-      if (!res.ok) {
-        return 'Could not verify username. Please try again later.'
-      }
-
-      const data = await res.json()
-      const exists = data.users?.some((u) => u.username.toLowerCase() === value.toLowerCase())
-
-      if (exists) {
-        return 'This username is already taken.'
-      }
-
-      return true
-    } catch (err) {
-      return 'Network error — please try again.'
-    }
+    const res = await fetch(`https://dummyjson.com/users/search?q=${encodeURIComponent(value)}`)
+    const data = await res.json()
+    return data.users.length > 0
   },
-  message: 'Invalid username.'
+  message: 'This username is already taken.'
 })
 
 const formEl = document.getElementById('formEl')
 const sf = watchForm(formEl, {
-  validateOnSubmit: true,
   validateOnInput: true,
   stopOnFirstError: false
 })

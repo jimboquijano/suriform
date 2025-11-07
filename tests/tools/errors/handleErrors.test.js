@@ -25,7 +25,6 @@ const setupMocks = () => {
     onInvalid: vi.fn(),
     onValid: vi.fn(),
     onFail: vi.fn(),
-    onPass: vi.fn(),
     onReset: vi.fn()
   }
 
@@ -131,7 +130,7 @@ describe('handleErrors()', () => {
 
   it('calls `onEmpty` when errors are collected', () => {
     const errors = handleErrors(form)
-    const validHandler = getHandler('onPass')
+    const validHandler = getHandler('onReset')
     errors.onEmpty(emptySpy)
 
     validHandler()

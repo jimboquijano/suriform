@@ -17,7 +17,15 @@ import { useAjax } from 'suriform/tools'
 ```js
 const form = document.querySelector('form')
 const ajax = useAjax(form)
+```
 
+> 💡 Each form initializes **one** `useAjax()` controller, even if called multiple times.
+
+## 🧩 Hooks
+
+🔹 Listen for AJAX call.
+
+```js
 ajax.onSuccess((response) => {
   console.log('Form submitted successfully:', response)
 })
@@ -26,8 +34,6 @@ ajax.onError((error) => {
   console.error('Form submission failed:', error)
 })
 ```
-
-> 💡 Each form initializes only **one** `useAjax()` controller, even if called multiple times.
 
 ## 🧾 API
 

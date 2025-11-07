@@ -29,6 +29,8 @@ localize({
 })
 ```
 
+## ▶️ Setting
+
 Use `setLocale()` to set the **current locale** globally or per form.
 
 ```js
@@ -61,14 +63,3 @@ setLocale('jp', form)
 2. Merges nested objects recursively to preserve existing translations.
 3. Initializes missing locale entries automatically.
 4. Ignores invalid entries and logs a console error.
-
-## 🌐 Locale Utilities
-
-The following helper functions support Suriform’s localization system:
-
-| Function                       | Description                                                                           |
-| ------------------------------ | ------------------------------------------------------------------------------------- |
-| **`setLocale(locale, form?)`** | Sets the current locale globally or per specific form, and revalidates active fields. |
-| **`getMessage(key, locale?)`** | Returns a localized validation message by key, or the key itself as fallback.         |
-| **`getName(key, locale?)`**    | Returns a localized field name by key, or the key itself as fallback.                 |
-| **`initLocale()`**             | Detects the initial locale from `<html lang>` or defaults to `'en'`.                  |

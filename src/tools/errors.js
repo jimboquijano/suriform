@@ -123,20 +123,6 @@ export function handleErrors(form, options = {}) {
   })
 
   /**
-   * Handle form validation success event.
-   *
-   * Triggered when the form the passes with no invalid fields
-   * Clears all internal error map and all the active error feedbacks.
-   */
-  validity.onPass(() => {
-    errors = new WeakMap()
-
-    onEmptyCallback()
-    if (summary) summary.removeErrors()
-    if (popup) popup.removeErrors()
-  })
-
-  /**
    * Handle form validation reset event.
    *
    * Triggered when the form the passes with no invalid fields

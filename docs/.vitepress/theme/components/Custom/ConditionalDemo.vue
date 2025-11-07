@@ -16,7 +16,6 @@ onMounted(() => {
   })
 
   const sf = watchForm(formEl.value, {
-    validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })
@@ -31,12 +30,12 @@ onMounted(() => {
       <div class="row">
         <label>
           Match this:
-          <input type="text" name="foo" match="bar" />
+          <input type="text" name="foo" match="bar" required />
         </label>
 
         <label>
           With this:
-          <input type="text" name="bar" />
+          <input type="text" name="bar" required />
         </label>
       </div>
 

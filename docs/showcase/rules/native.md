@@ -19,7 +19,6 @@ defineRules(nativeRules)
 
 const formEl = document.getElementById('formEl')
 const sf = watchForm(formEl, {
-  validateOnSubmit: true,
   validateOnInput: true,
   stopOnFirstError: false
 })

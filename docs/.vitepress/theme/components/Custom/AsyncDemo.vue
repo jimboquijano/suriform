@@ -8,31 +8,14 @@ const formEl = ref(null)
 onMounted(() => {
   defineRule('username', {
     async validate(value) {
-      if (!value) return true
-
-      try {
-        const res = await fetch(`https://dummyjson.com/users/search?q=${encodeURIComponent(value)}`)
-
-        if (!res.ok) {
-          return 'Could not verify username. Please try again later.'
-        }
-
-        const data = await res.json()
-
-        if (!data.users.length) {
-          return 'This username is already taken.'
-        }
-
-        return true
-      } catch (err) {
-        return 'Network error — please try again.'
-      }
+      const res = await fetch(`https://dummyjson.com/users/search?q=${encodeURIComponent(value)}`)
+      const data = await res.json()
+      return data.users.length > 0
     },
-    message: 'Invalid username.'
+    message: 'This username is already taken.'
   })
 
   const sf = watchForm(formEl.value, {
-    validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })
@@ -44,13 +27,7 @@ onMounted(() => {
     <form class="card" ref="formEl" autocomplete="off">
       <label>
         Username
-        <input
-          type="text"
-          name="username"
-          username
-          required
-          error-message="name|This is a message"
-        />
+        <input type="text" name="username" username required />
       </label>
 
       <div class="actions">

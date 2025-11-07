@@ -86,13 +86,6 @@ export default defineConfig({
           collapsed: true,
           items: [
             {
-              text: 'Hooks & Events',
-              items: [
-                { text: 'Use AJAX', link: '/showcase/hooks/ajax' },
-                { text: 'Use Validity', link: '/showcase/hooks/validity' }
-              ]
-            },
-            {
               text: 'Custom Rules',
               items: [
                 { text: 'Asynchronous', link: '/showcase/custom/async' },
@@ -113,6 +106,13 @@ export default defineConfig({
                 { text: 'Switch Locale', link: '/showcase/messaging/locale' },
                 { text: 'Group Message', link: '/showcase/messaging/group' },
                 { text: 'Wrap Inline', link: '/showcase/messaging/wrap' }
+              ]
+            },
+            {
+              text: 'Hooks & Events',
+              items: [
+                { text: 'AJAX Hooks', link: '/showcase/hooks/ajax' },
+                { text: 'Validity Hooks', link: '/showcase/hooks/validity' }
               ]
             },
             {

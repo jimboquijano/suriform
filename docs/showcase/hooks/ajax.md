@@ -1,9 +1,9 @@
 ---
-title: Use AJAX Showcase
+title: AJAX Hooks Showcase
 aside: false
 ---
 
-# Use AJAX Showcase
+# AJAX Hooks Showcase
 
 ::: tabs
 == Demo
@@ -17,7 +17,6 @@ import { useAjax } from 'suriform/tools'
 
 const formEl = document.getElementById('formEl')
 const sf = watchForm(formEl, {
-  validateOnSubmit: true,
   validateOnInput: true,
   stopOnFirstError: false
 })

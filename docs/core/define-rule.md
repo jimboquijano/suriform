@@ -23,6 +23,8 @@ defineRule('minlength', {
 })
 ```
 
+## ▶️ Multiple
+
 Use `defineRules()` to register multiple rules in a single call.
 
 ```js

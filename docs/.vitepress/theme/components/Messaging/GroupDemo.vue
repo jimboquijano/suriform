@@ -11,7 +11,6 @@ onMounted(() => {
   defineRules(fileRules)
 
   const sf = watchForm(formEl.value, {
-    validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })

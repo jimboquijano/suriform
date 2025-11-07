@@ -1,9 +1,9 @@
 ---
-title: Use Validity Showcase
+title: Validity Hooks Showcase
 aside: false
 ---
 
-# Use Validity Showcase
+# Validity Hooks Showcase
 
 ::: tabs
 == Demo
@@ -20,7 +20,6 @@ defineRules(alphaRules)
 
 const formEl = document.getElementById('formEl')
 const sf = watchForm(formEl, {
-  validateOnSubmit: true,
   validateOnInput: true,
   stopOnFirstError: false
 })

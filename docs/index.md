@@ -22,8 +22,8 @@ hero:
 
 features:
   - icon: ⚡︎
-    title: Fast, Lean, & Framework-Free
-    details: Suriform is built for modern, high-performance frontends — no frameworks, no bloat, just raw speed. Works perfectly with SPAs or vanilla JS projects.
+    title: Lightning Fast
+    details: Built for the modern and high-performance frontends — no frameworks, no bloat, just raw speed. Works perfectly with SPAs or vanilla JS projects.
 
   - icon: ⌬
     title: Smart Validation Engine
@@ -31,17 +31,17 @@ features:
 
   - icon: 🌐︎
     title: Localization That Scales
-    details: Manage messages, field names, and tokens across locales — globally or per form. Enjoy granular localization and message templating flexibility.
+    details: Manage messages, field names, and tokens across locales — globally or per form. Enjoy granular localization and message templating.
 
   - icon: ❝
     title: Flexible Messaging
-    details: Manage messages at multiple levels — rule, locale, and group — with support for token formatting, templated inline message and group message.
+    details: Manage messages at multiple levels — rule, locale, and group. With support for token formatting, templated inlines, and group message.
 
   - icon: ⚠︎
-    title: Beautiful Error Handling
-    details: Deliver accessible, customizable, and multi-layered error feedback — inline, popup, or summary. Suriform makes error UX both elegant and effortless.
+    title: Easy Error Handling
+    details: Deliver accessible, customizable, and multi-layered error feedback — inline, popup, or summary. With ARIA support for better accessibility.
 
   - icon: ⚙︎
     title: Powerful Tools & Hooks
-    details: Take full control of form behavior, events, and error lifecycles using Suriform’s built-in tools — including the `ajax`, `errors`, and `validity` hooks.
+    details: Take granular control of form behavior, events, and error lifecycles using built-in tools — including the `ajax`, `errors`, and `validity` hooks.
 ---

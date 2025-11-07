@@ -31,7 +31,7 @@ Get the optional `Tools` and `Rules`:
 <script src="https://cdn.jsdelivr.net/npm/suriform@latest/dist/suriform-rules.umd.min.js"></script>
 ```
 
-Or get the optional styles:
+Or get the optional form styles:
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/suriform@latest/dist/suriform.css" />

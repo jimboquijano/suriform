@@ -8,7 +8,6 @@ const formEl = ref(null)
 
 onMounted(() => {
   const sf = watchForm(formEl.value, {
-    validateOnSubmit: true,
     validateOnInput: true,
     stopOnFirstError: false
   })

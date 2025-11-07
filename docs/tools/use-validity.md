@@ -17,7 +17,15 @@ import { useValidity } from 'suriform/tools'
 ```js
 const form = document.querySelector('form')
 const validity = useValidity(form)
+```
 
+> 💡 Each form initializes **one** `useValidity()` controller, even if called multiple times.
+
+## 🧩 Hooks
+
+🔹 Listen for field validation.
+
+```js
 validity.onInvalid(({ field, message }) => {
   console.log('Invalid field:', field.name, message)
 })
@@ -25,21 +33,27 @@ validity.onInvalid(({ field, message }) => {
 validity.onValid(({ field }) => {
   console.log('Valid field:', field.name)
 })
+```
 
+🔹 Listen for form validation.
+
+```js
 validity.onFail((errors) => {
-  console.warn('Form failed validation:', errors)
+  console.warn('Form failed:', errors)
 })
 
 validity.onPass(() => {
-  console.log('Form cleared validation errors.')
-})
-
-validity.onReset(() => {
-  console.log('Form reset to initial state.')
+  console.log('Form passed.')
 })
 ```
 
-> 💡 Each form initializes only **one** `useValidity()` controller, even if called multiple times.
+🔹 Listen for form reset.
+
+```js
+validity.onReset(() => {
+  console.log('Form is reset.')
+})
+```
 
 ## 🧾 API
 

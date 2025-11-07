@@ -16,7 +16,10 @@ import { withSummary } from 'suriform/tools'
 
 ```js
 const form = document.querySelector('#signup')
-const summary = withSummary(form)
+const errors = document.querySelector('#summary')
+const summary = withSummary(form, {
+  container: errors
+})
 
 summary.addError(form.username, 'Username is required!')
 summary.removeError(form.username)
@@ -35,6 +38,8 @@ summary.addErrors([
 | `scrollOnClick`    | `boolean`     | `true`  | Scrolls smoothly to the field and focuses it when clicking an error. |
 | `includePrefix`    | `boolean`     | `true`  | Prefix each error message with the field name or ID.                 |
 | `container`        | `HTMLElement` | `form`  | The container where the summary list will be rendered.               |
+
+> 💡 When `container` is not set, the summary list is placed above the form.
 
 ## 🧾 API
 

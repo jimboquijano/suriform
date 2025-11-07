@@ -17,26 +17,69 @@ import { handleErrors } from 'suriform/tools'
 ```js
 const form = document.querySelector('#login')
 const errors = handleErrors(form)
-
-errors.onAdd(({ field, message }) => {
-  console.log(`Error on ${field.name}: ${message}`)
-})
-
-errors.onEmpty(() => {
-  console.log('All errors cleared!')
-})
 ```
 
-Use with [`withPopup()`](../tools/with-popup) and [`withSummary()`](../tools/with-summary) seamlessly.
+> 💡 Under the hood, `handleErrors()` uses `useValidity()` to listen for events.
+
+## 💭 Feedbacks
+
+🔹 Integrate [`withPopup()`](../tools/with-popup) seamlessly.
 
 ```js
 const errors = handleErrors(form, {
-  withPopup: { position: 'right' },
-  withSummary: { target: '#summary' }
+  withPopup: true
 })
 ```
 
-> 💡 Under the hood, `handleErrors()` listens to validation events from `useValidity()`.
+🔹 Integrate [`withSummary()`](../tools/with-summary) seamlessly.
+
+```js
+const errors = handleErrors(form, {
+  withSummary: true
+})
+```
+
+> 💡 You can use `withPopup` and `withSummary` together.
+
+## 🧩 Hooks
+
+🔹 Listen for field validation.
+
+```js
+errors.onAdd(({ field, message }) => {
+  console.log(`Error added ${field.name}: ${message}`)
+})
+
+errors.onRemove(({ field, message }) => {
+  console.log(`Error removed ${field.name}: ${message}`)
+})
+
+errors.onChange(({ field, message }) => {
+  console.log(`Error changed ${field.name}: ${message}`)
+})
+```
+
+🔹 Listen for form validation.
+
+```js
+errors.onCollect((errors) => {
+  console.log('Errors collected:', errors)
+})
+
+errors.onEmpty(() => {
+  console.log('Errors empty')
+})
+```
+
+🔹 Retrieve error states.
+
+```js
+const errors = errors.getErrors()
+console.log('Errors:', errors)
+
+const error = errors.getError(field)
+console.log(`Error ${field.name}: ${message}`)
+```
 
 ## ⚙️ Options
 
