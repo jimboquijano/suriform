@@ -7,7 +7,7 @@ sidebar: auto
 
 All notable changes made to **Suriform** are recorded in this document. Each update is tracked with version numbers, dates, and a summary of modifications. This project follows the principles of [Semantic Versioning](https://semver.org/) to ensure consistent and predictable version updates.
 
-## [1.0.0] - 2025-11-06
+## [1.0.0] - 2025-11-10
 
 ### Added
 
@@ -20,7 +20,7 @@ All notable changes made to **Suriform** are recorded in this document. Each upd
   - ⚠️ **Error Handling** – Inline, popup, and summary error feedbacks
   - 🧩 **Events & Hooks** – Extend behavior through validation lifecycle hooks
   - 👁️ **Watchers** – Reactively observe and respond to form or field changes
-- We’d love your feedback, pull requests, issues, or any ideas you have 🚀
+- I’d love your feedback, pull requests, issues, or any ideas you have 🚀
 
 ### Changed
 
