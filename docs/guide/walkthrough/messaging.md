@@ -56,7 +56,7 @@ defineRule('between', {
 
 ## 🌐 Locale Level
 
-With a locale source, a `false` result will be converted into a `resultKey`. This key is used to lookup a locale source and retrieve its **localized message** when available. A `resultKey` can be returned directly as well, which will have the same effect.
+With a locale source, a `false` result turns into a `resultKey` using the **defined rule name**. This key is used to lookup a locale source and retrieve its **localized message** when available. A `resultKey` can be returned directly, which will have the same effect.
 
 ::: tabs
 == false result

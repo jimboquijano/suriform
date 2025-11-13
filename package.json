@@ -1,6 +1,6 @@
 {
   "name": "suriform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Form Validation for the Modern Web.",
   "author": "Jimbo Quijano",
   "license": "MIT",
@@ -40,7 +40,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run docs:dev",
     "build:core": "vite build --config vite.config.core.js",
     "build:rules": "vite build --config vite.config.rules.js",
     "build:tools": "vite build --config vite.config.tools.js",
@@ -74,10 +74,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jimzqui/suriform.git"
+    "url": "https://github.com/jimboquijano/suriform.git"
   },
   "bugs": {
-    "url": "https://github.com/jimzqui/suriform/issues"
+    "url": "https://github.com/jimboquijano/suriform/issues"
   },
-  "homepage": "https://github.com/jimzqui/suriform#readme"
+  "homepage": "https://jimboquijano.github.io/suriform/"
 }
